@@ -1,0 +1,29 @@
+{
+  "name": "payment_notifier_app_offline",
+  "version": "1.0.0",
+  "main": "server.js",
+  "bin": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "build": "pkg . --output ShopServer.exe"
+  },
+  "pkg": {
+    "targets": ["node18-win-x64"],
+    "assets": ["dashboard.html"]
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "pkg": "^5.8.1"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^5.2.1",
+    "firebase-admin": "^13.5.0",
+    "socket.io": "^4.8.1",
+    "ws": "^8.20.0"
+  }
+}

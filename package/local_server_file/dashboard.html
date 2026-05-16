@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Shop Server</title>
+</head>
+<body>
+  <h2>Shop Server</h2>
+
+  <div>
+    Firebase: <span id="firebase">Connected</span><br>
+    WebSocket: <span>Running</span><br>
+  </div>
+
+  <br>
+
+  <button onclick="toggle()">Pause / Resume</button>
+
+  <pre id="logs" style="height:300px; overflow:auto; border:1px solid black;"></pre>
+
+  <script>
+    const ws = new WebSocket("ws://localhost:3001");
+
+    ws.onmessage = (event) => {
+      const logs = document.getElementById("logs");
+      logs.textContent += event.data + "\n";
+      logs.scrollTop = logs.scrollHeight;
+    };
+
+    function toggle() {
+      fetch("/toggle", { method: "POST" });
+    }
+  </script>
+</body>
+</html>

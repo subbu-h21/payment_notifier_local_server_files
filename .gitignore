@@ -1,0 +1,8 @@
+node_modules/
+dist/
+*.log
+
+# Secrets — never commit these
+.env
+serviceAccountKey.json
+settings.json
